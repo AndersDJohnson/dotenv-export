@@ -27,7 +27,7 @@ function lines (ls) {
 function line (l) {
   var com = /^\s*#/
   if (com.test(l)) return
-  var rex = /^(\s*export)?\s*([\w\.\-]+)\s*=\s*(.*)?\s*$/
+  var rex = /^(\s*export\s+)?([\w\.\-]+)\s*=\s*(.*)?\s*$/
   var m = l.match(rex)
   if (m && m[2]) {
     return {
