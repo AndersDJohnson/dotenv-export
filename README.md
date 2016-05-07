@@ -15,3 +15,5 @@ npm i -g dotenv-export
 ```
 source <(dotenv-export)
 ```
+
+[dotenv]: https://github.com/motdotla/dotenv
