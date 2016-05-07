@@ -1,12 +1,13 @@
 {
   "name": "dotenv-export",
   "version": "1.0.0",
-  "description": "",
+  "description": "Sourcing .env into your shell.",
   "main": "index.js",
   "bin": "cli.js",
+  "repository": "AndersDJohnson/dotenv-export",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Anders D. Johnson",
   "license": "ISC"
 }
