@@ -1,6 +1,6 @@
 {
   "name": "dotenv-export",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Sourcing .env into your shell.",
   "main": "index.js",
   "bin": "cli.js",
