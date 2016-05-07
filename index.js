@@ -16,12 +16,12 @@ function parse (text) {
 
 function lines (ls) {
   var vars = ls.map(line)
-  var out = ''
+  var out = []
   vars.forEach(function (v) {
     if (!v) return
-    out += 'export ' + v.name + '=' + v.value + '\n'
+    out.push('export ' + v.name + '=' + v.value)
   })
-  return out
+  return out.join('\n')
 }
 
 function line (l) {
