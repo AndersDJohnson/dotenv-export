@@ -2,15 +2,23 @@ var fs = require('fs')
 
 function run () {
   var file = '.env'
-  var out = lines(parse(read(file)))
-  console.log(out)
+  var res = out(file)
+  console.log(res)
+}
+
+function out (file) {
+  return lines(split(read(file)))
+}
+
+function outText (text) {
+  return lines(split(text))
 }
 
 function read (file) {
   return fs.readFileSync(file, 'utf8')
 }
 
-function parse (text) {
+function split (text) {
   return text.trim().split(/[\n\r]+/)
 }
 
@@ -38,5 +46,11 @@ function line (l) {
 }
 
 module.exports = {
-  run: run
+  run: run,
+  out: out,
+  outText: outText,
+  read: read,
+  split: split,
+  lines: lines,
+  line: line
 }

@@ -6,8 +6,11 @@
   "bin": "cli.js",
   "repository": "AndersDJohnson/dotenv-export",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test"
   },
   "author": "Anders D. Johnson",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "tape": "^4.5.1"
+  }
 }
