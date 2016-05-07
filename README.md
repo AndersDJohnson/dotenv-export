@@ -1,6 +1,8 @@
 # dotenv-export
 
-Adds `export` statements to each line of a [dotenv] `.env` file, for sourcing into your shell.
+Source & export `.env` into your shell.
+Adds `export` statements to each line of a [dotenv] `.env` file, for defining
+any variables therein in your shell.
 
 ## Install
 
