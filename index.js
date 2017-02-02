@@ -40,7 +40,7 @@ function line (l) {
   if (m && m[2]) {
     return {
       name: m[2].trim(),
-      value: m[3].trim()
+      value: m[3] ? m[3].trim() : ''
     }
   }
 }

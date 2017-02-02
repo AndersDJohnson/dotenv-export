@@ -13,6 +13,7 @@ test('line', function (t) {
     t.deepEqual(index.line('  FOO  = BAR'), {name: 'FOO', value: 'BAR'})
     t.deepEqual(index.line('exported = Yes  '), {name: 'exported', value: 'Yes'})
     t.deepEqual(index.line('export ed = Yes  '), {name: 'ed', value: 'Yes'})
+    t.deepEqual(index.line('export A='), {name: 'A', value: ''})
 
     t.end()
 })
