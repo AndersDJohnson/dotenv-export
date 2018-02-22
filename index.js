@@ -32,6 +32,10 @@ function lines (ls) {
   return out.join('\n')
 }
 
+function addEscapes (s) {
+  return s.replace(/([`])/, '\\$1')
+}
+
 function line (l) {
   var com = /^\s*#/
   if (com.test(l)) return
@@ -39,8 +43,8 @@ function line (l) {
   var m = l.match(rex)
   if (m && m[2]) {
     return {
-      name: m[2].trim(),
-      value: m[3] ? m[3].trim() : ''
+      name: addEscapes(m[2]).trim(),
+      value: m[3] ? addEscapes(m[3]).trim() : ''
     }
   }
 }

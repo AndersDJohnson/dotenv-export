@@ -18,7 +18,7 @@ test('line', function (t) {
     t.end()
 })
 
-test('test', function (t) {
+test('text', function (t) {
 
     t.equal(
       index.outText([
@@ -34,4 +34,18 @@ test('test', function (t) {
     )
 
     t.end()
+})
+
+test('escapes', function (t) {
+
+  t.equal(
+    index.outText([
+      'DB_PASS="some`password"'
+    ].join('\n')),
+    [
+      'export DB_PASS="some\\`password"'
+    ].join('\n')
+  )
+
+  t.end()
 })
