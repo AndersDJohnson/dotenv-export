@@ -2,4 +2,4 @@
 
 var index = require('.')
 
-index.run()
+index.run(process.argv[2])

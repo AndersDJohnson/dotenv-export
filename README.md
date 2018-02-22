@@ -16,4 +16,10 @@ npm i -g dotenv-export
 source <(dotenv-export)
 ```
 
+Or you can use a custom file name instead of the default `.env`, e.g., `.env.test`:
+
+```
+source <(dotenv-export .env.test)
+```
+
 [dotenv]: https://github.com/motdotla/dotenv

@@ -1,7 +1,7 @@
 var fs = require('fs')
 
-function run () {
-  var file = '.env'
+function run (path) {
+  var file = path || '.env'
   var res = out(file)
   console.log(res)
 }
