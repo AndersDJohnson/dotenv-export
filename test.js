@@ -40,10 +40,18 @@ test('escapes', function (t) {
 
   t.equal(
     index.outText([
-      'DB_PASS="some`password"'
+      'DB_PASS="some`password"',
+      'DB_PASS2="some${foo}password"',
+      'DB_PASS3="some$password"',
+      'DB_PASS4="some{password"',
+      'DB_PASS5="some}password"'
     ].join('\n')),
     [
-      'export DB_PASS="some\\`password"'
+      'export DB_PASS="some\\`password"',
+      'export DB_PASS2="some\\$\\{foo\\}password"',
+      'export DB_PASS3="some\\$password"',
+      'export DB_PASS4="some\\{password"',
+      'export DB_PASS5="some\\}password"'
     ].join('\n')
   )
 

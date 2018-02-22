@@ -33,7 +33,7 @@ function lines (ls) {
 }
 
 function addEscapes (s) {
-  return s.replace(/([`])/, '\\$1')
+  return s.replace(/([`${}])/g, '\\$1')
 }
 
 function line (l) {
