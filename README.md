@@ -22,4 +22,18 @@ Or you can use a custom file name instead of the default `.env`, e.g., `.env.tes
 source <(dotenv-export .env.test)
 ```
 
+### Multiline Support
+
+To export multiline environment variables (as supported in the [`dotenv`](https://github.com/motdotla/dotenv#rules) package), use the literal characters `\n` in your variable:
+
+```
+MULTILINE_VAR="I\nlike\ntrains"
+```
+
+And run the following command to convert the `\n` characters to actual new lines:
+
+```
+source <(dotenv-export | sed 's/\\n/\n/g')
+```
+
 [dotenv]: https://github.com/motdotla/dotenv
