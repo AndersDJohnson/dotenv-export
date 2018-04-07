@@ -14,6 +14,7 @@ test('line', function (t) {
     t.deepEqual(index.line('exported = Yes  '), {name: 'exported', value: 'Yes'})
     t.deepEqual(index.line('export ed = Yes  '), {name: 'ed', value: 'Yes'})
     t.deepEqual(index.line('export A='), {name: 'A', value: ''})
+    t.deepEqual(index.line('MULTILINE_VAR="I\\nlike\\ntrains"'), {name: 'MULTILINE_VAR', value: '"I\\nlike\\ntrains"'})
 
     t.end()
 })
@@ -44,14 +45,16 @@ test('escapes', function (t) {
       'DB_PASS2="some${foo}password"',
       'DB_PASS3="some$password"',
       'DB_PASS4="some{password"',
-      'DB_PASS5="some}password"'
+      'DB_PASS5="some}password"',
+      'MULTILINE_VAR="I\\nlike\\ntrains"'
     ].join('\n')),
     [
       'export DB_PASS="some\\`password"',
       'export DB_PASS2="some\\$\\{foo\\}password"',
       'export DB_PASS3="some\\$password"',
       'export DB_PASS4="some\\{password"',
-      'export DB_PASS5="some\\}password"'
+      'export DB_PASS5="some\\}password"',
+      'export MULTILINE_VAR="I\\nlike\\ntrains"'
     ].join('\n')
   )
 
