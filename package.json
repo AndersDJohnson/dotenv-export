@@ -11,6 +11,6 @@
   "author": "Anders D. Johnson",
   "license": "ISC",
   "devDependencies": {
-    "tape": "^4.5.1"
+    "tape": "^5.11.0"
   }
 }
